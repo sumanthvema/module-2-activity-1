@@ -1,12 +1,16 @@
 //Student Name - Naga Sumanth Vema
 //Student ID - 1227779282
-//Due Date - 02/04/2024
+//Due Date - 03/24/2024
 
 const express = require('express');
 const app = express();
+const loggerMiddleware = require('./loggerMiddleware')
 
 //Parse incoming request bodies.
 app.use(express.urlencoded({extended : true }));
+
+//using loggermiddleware
+app.use(loggerMiddleware);
 
 //Set EJS as templating engine
 app.set('view engine', 'ejs');
